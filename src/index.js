@@ -8,9 +8,19 @@ import {Provider} from 'react-redux'
 
 import {browserHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
+import {Router,Route} from 'react-router'
 
 const store = createStore(reducers,composeWithDevTools(applyMiddleware(thunk)))
 const history = syncHistoryWithStore(browserHistory,store)
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store = {store}>
+        <Router history = {history}>
+            <Route component = {Layout}>
+                <Route path = '/' component = {Books} />
+            </Route>
+        </Router>
+    </Provider>,
+document.getElementById('root')    
+)
 
