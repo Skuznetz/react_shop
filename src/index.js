@@ -9,6 +9,8 @@ import {Provider} from 'react-redux'
 import {browserHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 import {Router,Route} from 'react-router'
+import Layout from 'containers/layout'
+import Books from 'containers/books'
 
 const store = createStore(reducers,composeWithDevTools(applyMiddleware(thunk)))
 const history = syncHistoryWithStore(browserHistory,store)
