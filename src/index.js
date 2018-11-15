@@ -11,9 +11,9 @@ import {syncHistoryWithStore} from 'react-router-redux'
 import Route from 'react-router-dom/Route'
 import Layout from 'containers/layout'
 import Books from 'containers/books'
-// import createBrowserHistory from "history/createBrowserHistory"
+
 const store = createStore(reducers,composeWithDevTools(applyMiddleware(thunk)))
-// const history = createBrowserHistory()
+
 
 ReactDOM.render(
     <Provider store = {store}>
