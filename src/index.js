@@ -13,11 +13,11 @@ import Layout from 'containers/layout'
 import Books from 'containers/books'
 
 const store = createStore(reducers,composeWithDevTools(applyMiddleware(thunk)))
-
+const history = syncHistoryWithStore(browserHistory,store)
 
 ReactDOM.render(
     <Provider store = {store}>
-        <BrowserRouter ><div>
+        <BrowserRouter history={history} ><div>
             <Route component = {Layout} />
                 <Route path = '/' component = {Books} />
             </div>
