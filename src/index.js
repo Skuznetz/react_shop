@@ -6,6 +6,7 @@ import thunk from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import {Provider} from 'react-redux'
 
+
 import { BrowserRouter} from 'react-router-dom'
 import {syncHistoryWithStore} from 'react-router-redux'
 import Route from 'react-router-dom/Route'
@@ -13,11 +14,11 @@ import Layout from 'containers/layout'
 import Books from 'containers/books'
 
 const store = createStore(reducers,composeWithDevTools(applyMiddleware(thunk)))
-const history = syncHistoryWithStore(browserHistory,store)
+
 
 ReactDOM.render(
     <Provider store = {store}>
-        <BrowserRouter history={history} ><div>
+        <BrowserRouter ><div>
             <Route component = {Layout} />
                 <Route path = '/' component = {Books} />
             </div>
