@@ -7,18 +7,23 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import {Provider} from 'react-redux'
 
 
-import { BrowserRouter as Router} from 'react-router-dom'
-import {syncHistoryWithStore} from 'react-router-redux'
-import Route from 'react-router-dom/Route'
+ import {BrowserRouter as Router,Route,Link } from 'react-router-dom'
+// import {syncHistoryWithStore} from 'react-router-redux'
+// import Route from 'react-router-dom/Route'
 import Layout from 'containers/layout'
 import Books from 'containers/books'
+import createBrowserHistory from "history/createBrowserHistory"
+
+const history = createBrowserHistory();
 
 const store = createStore(reducers,composeWithDevTools(applyMiddleware(thunk)))
 
 
+
+
 ReactDOM.render(
     <Provider store = {store}>
-        <Router ><div>
+        <Router history={history}><div>
             <Route component = {Layout} />
                 <Route path = '/' component = {Books} />
             </div>
