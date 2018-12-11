@@ -7,7 +7,7 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import {Provider} from 'react-redux'
 
 
- import {BrowserRouter as Router,Route,Link } from 'react-router-dom'
+ import { Router,Route,Link } from 'react-router-dom'
 // import {syncHistoryWithStore} from 'react-router-redux'
 // import Route from 'react-router-dom/Route'
 import Layout from 'containers/layout'
